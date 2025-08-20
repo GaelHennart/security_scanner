@@ -25,9 +25,12 @@ git clone https://github.com/GaelHennart/security_scanner.git
 Se rendre dans le dossier du projet :
 cd chemin/vers/security_scanner
 
-Installer les dépendances :
+Installer les dépendances Python :
 - pip install -r requirements.txt
-- npm install
+
+Installer les dépendances Angular :
+- Dans le projet faire : cd snyk/angular
+- npm install --legacy-peer-deps
 
 
 ## 1. Configuration du chemin du projet
@@ -91,4 +94,6 @@ Voici comment faire pour chaque partie :
 
 ## 5. Exécution
 - Choisir la fréquence des scans dans le fichier run_scanner.py, en changeant la ligne **schedule.every(10).minutes.do(run_scans)**. Exemple tous les lundis à 10h : **schedule.every().monday.at("10:00").do(run_scans)**
-- Dans le terminal, se placer à la racine du dossier avec la commande **cd chemin/vers/security_scanner** et lancer les scans avec la commande **python run_scanner.py**
+- Lancer Docker sur la machine host.
+- Dans le terminal, se placer à la racine du dossier avec la commande **cd chemin/vers/security_scanner**. 
+- Puis lancer les scans avec la commande **python run_scanner.py**

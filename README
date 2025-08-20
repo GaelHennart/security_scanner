@@ -12,7 +12,6 @@ Cette procédure explique comment :
 ---
 
 ## Prérequis
-
 Afin de pouvoir utiliser l'outil, il est nécessaire d'avoir installé :
 - Python 3
 - Docker et Docker Compose
@@ -20,13 +19,18 @@ Afin de pouvoir utiliser l'outil, il est nécessaire d'avoir installé :
 ---
 
 ## Installation
+Cloner le dépôt :
+git clone https://github.com/GaelHennart/security_scanner.git
 
-Clôner le dépôt github :
+Se rendre dans le dossier du projet :
+cd chemin/vers/security_scanner
 
+Installer les dépendances :
+- pip install -r requirements.txt
+- npm install
 
 
 ## 1. Configuration du chemin du projet
-
 1. Ouvrir le fichier `run_scanner.py`.
 2. Modifier la variable `project_path` pour pointer vers l’emplacement où le projet est enregistré sur la **machine host**.
 
@@ -87,4 +91,4 @@ Voici comment faire pour chaque partie :
 
 ## 5. Exécution
 - Choisir la fréquence des scans dans le fichier run_scanner.py, en changeant la ligne **schedule.every(10).minutes.do(run_scans)**. Exemple tous les lundis à 10h : **schedule.every().monday.at("10:00").do(run_scans)**
-- Dans le terminal, se place à la racine du dossier avec la commande **cd path/to/the/folder** et lancer les scans avec la commande **python run_scanner.py**
+- Dans le terminal, se placer à la racine du dossier avec la commande **cd chemin/vers/security_scanner** et lancer les scans avec la commande **python run_scanner.py**

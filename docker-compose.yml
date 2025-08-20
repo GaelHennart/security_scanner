@@ -1,0 +1,34 @@
+services:
+  zap:
+    build: ./zap
+    container_name: zap_scanner
+    env_file:
+      - ./.env
+    volumes:
+      - ./zap/reports:/zap/wrk
+      
+  nmap:
+    build: ./nmap
+    container_name: nmap_scanner
+    env_file:
+      - ./.env
+    volumes:
+      - ./nmap/reports:/nmap/reports
+
+  snyk_angular:
+    build: ./snyk/angular
+    container_name: snyk_angular_scanner
+    env_file:
+      - ./.env
+    volumes:
+      - ./snyk/angular/reports:/app/reports
+
+  snyk_java:
+    build: ./snyk/java
+    container_name: snyk_java_scanner
+    env_file:
+      - ./.env
+    volumes:
+      - ./snyk/java/reports:/app/reports
+
+

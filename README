@@ -1,0 +1,90 @@
+# Analyse de sécurité automatisée – Configuration et utilisation
+
+## Présentation
+Ce projet permet d’exécuter des analyses de sécurité automatisées sur une application via plusieurs outils : **OWASP ZAP**, **Nmap** et **Snyk**.
+
+Cette procédure explique comment :
+- Configurer le projet
+- Définir les variables d’environnement
+- Préparer les fichiers nécessaires
+- Lancer les analyses
+
+---
+
+## Prérequis
+
+Afin de pouvoir utiliser l'outil, il est nécessaire d'avoir installé :
+- Python 3
+- Docker et Docker Compose
+
+---
+
+## Installation
+
+Clôner le dépôt github :
+
+
+
+## 1. Configuration du chemin du projet
+
+1. Ouvrir le fichier `run_scanner.py`.
+2. Modifier la variable `project_path` pour pointer vers l’emplacement où le projet est enregistré sur la **machine host**.
+
+Si les volumes Docker sont déplacés :
+- Mettre à jour **tous les chemins** dans :
+  - Les `Dockerfile`
+  - Les scripts Bash (`.sh`) associés à chaque outil
+
+---
+
+## 2. Configuration des variables d’environnement
+Il faut dans un premier temps créer un fichier .env à la racine du projet, au même endroit que le docker-compose.
+Dans le fichier **.env.example**, à la racine du projet, se trouve un exemple du fichier .env à créer. Ce fichier doit être complété avant de lancer les scans.
+
+Voici comment faire pour chaque partie :
+**A noter qu'il ne faut pas ajouter d'espace après le =**
+
+### 2.1 ZAP
+- **TOKEN** : Récupérable via un proxy lors de l’authentification sur l’application cible **ou** via le Swagger.
+- **TARGET_URL** : L’URL complète de l’application à tester.
+- **TARGET** : Le nom de domaine uniquement (sans `http://` ni `https://`).
+
+### 2.2 Snyk
+- Créer un compte sur [https://snyk.io]
+- Récupérer la clé API.
+- La placer dans la variable `SNYK_TOKEN`.
+
+### 2.3 Serveur de messagerie
+- **SMTP_USER** : Email de l’expéditeur.
+- **SMTP_PASSWORD** : Mot de passe d’application généré pour cet email.
+- **EMAIL_FROM** : Nom ou email affiché comme expéditeur.
+- **EMAIL_TO** : Adresse email du destinataire des rapports.
+
+---
+
+## 3. Fichiers nécessaires
+
+### 3.1 Pour ZAP
+- Un fichier Swagger décrivant les routes API (`swagger.json` par défaut).
+- Ce fichier doit être placé **dans le même dossier que ZAP**.
+- Si le nom change, mettre à jour :
+  - Le `Dockerfile`
+  - Le script Bash correspondant
+
+### 3.2 Pour Snyk
+- **Java** : Placer `pom.xml` dans le dossier `java/`.
+- **Angular** : Placer `package.json` et `package-lock.json` dans le dossier `angular/`.
+
+---
+
+## 4. Personnalisation des tests
+- Les tests exécutés par les outils sont définis dans les scripts Bash (`.sh`).
+- Adapter les commandes selon les besoins :
+  - Ajouter ou retirer des paramètres
+  - Changer les options de scan
+
+---
+
+## 5. Exécution
+- Choisir la fréquence des scans dans le fichier run_scanner.py, en changeant la ligne **schedule.every(10).minutes.do(run_scans)**. Exemple tous les lundis à 10h : **schedule.every().monday.at("10:00").do(run_scans)**
+- Dans le terminal, se place à la racine du dossier avec la commande **cd path/to/the/folder** et lancer les scans avec la commande **python run_scanner.py**

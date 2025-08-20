@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" type="text/css" integrity="sha384-VEpVDzPR2x8NbTDZ8NFW4AWbtT2g/ollEzX/daZdW/YvUBlbgVtsxMftnJ84k0Cn" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha384-fJU6sGmyn07b+uD1nMk7/iSb4yvaowcueiQhfVgQuD98rfva8mcr1eSvjchfpMrH" crossorigin="anonymous"></script><script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" integrity="sha384-rgWRqC0OFPisxlUvl332tiM/qmaNxnlY46eksSZD84t+s2vZlqGeHrncwIRX7CGp" crossorigin="anonymous"></script><script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js" integrity="sha384-7PXRkl4YJnEpP8uU4ev9652TTZSxrqC8uOpcV1ftVEC7LVyLZqqDUAaq+Y+lGgr9" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><style>
+          .target:before {
+            content: "";
+            display: block;
+            height: 50px;
+            margin: -20px 0 0;
+          }
+          @media only screen and (min-width:1900px) {
+            .container {
+              width: 1800px;
+              }
+          }
+          .footer {
+            margin-top:60px;
+            padding-top:60px;
+            width: 100%;
+            height: 180px;
+            background-color: #f5f5f5;
+          }
+          .clickable {
+            cursor: pointer;
+          }
+          .panel-heading > h3:before {
+            font-family: 'Glyphicons Halflings';
+            content: "\e114"; /* glyphicon-chevron-down */
+            padding-right: 1em;
+          }
+          .panel-heading.collapsed > h3:before {
+            content: "\e080"; /* glyphicon-chevron-right */
+          }
+        </style>
+<title>Scan Report Nmap 7.97</title>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top"><div class="container-fluid">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span></a>
+</div>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><ul class="nav navbar-nav">
+<li><a href="#scannedhosts">Scanned Hosts</a></li>
+<li><a href="#onlinehosts">Online Hosts</a></li>
+<li><a href="#openservices">Open Services</a></li>
+</ul></div>
+</div></nav><div class="container">
+<div class="jumbotron">
+<h1>Scan Report<br><small>Nmap 7.97</small>
+</h1>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">nmap -sV -sC -A --script vulners,vuln,ssl*,http-enum,http-title,http-headers -p 80,443,8080,8443 -oX /nmap/reports/report.xml wap-uat.embuild.be</pre>
+<p class="lead">Thu Jul 31 09:37:08 2025 – Thu Jul 31 09:39:37 2025<br>1 hosts scanned.
+              1 hosts up.
+              0 hosts down.
+            </p>
+<div class="progress">
+<div class="progress-bar progress-bar-success" style="width:100%;">1<span class="sr-only"></span>
+</div>
+<div class="progress-bar progress-bar-danger" style="width:0%;">0<span class="sr-only"></span>
+</div>
+</div>
+</div>
+<h2 id="scannedhosts" class="target">Scanned Hosts</h2>
+<div class="table-responsive"><table id="table-overview" class="table table-striped dataTable" role="grid">
+<thead><tr>
+<th>State</th>
+<th>Address</th>
+<th>Hostname</th>
+<th>TCP (open)</th>
+<th>UDP (open)</th>
+</tr></thead>
+<tbody><tr>
+<td><span class="label label-success">up</span></td>
+<td><a href="#onlinehosts-20-4-111-191">20.4.111.191</a></td>
+<td>wap-uat.embuild.be</td>
+<td>2</td>
+<td>0</td>
+</tr></tbody>
+</table></div>
+<script>
+            $(document).ready(function() {
+              $('#table-overview').DataTable();
+            });
+            $('#table-overview').DataTable( {
+              "lengthMenu": [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "All"] ]
+            });
+          </script><h2 id="onlinehosts" class="target">Online Hosts</h2>
+<div class="panel panel-default">
+<div class="panel-heading clickable" data-toggle="collapse" id="onlinehosts-20-4-111-191" data-target="#20-4-111-191"><h3 class="panel-title">20.4.111.191 - wap-uat.embuild.be</h3></div>
+<div class="panel-body collapse in" id="20-4-111-191">
+<h4>Hostnames</h4>
+<ul><li>wap-uat.embuild.be (user)</li></ul>
+<h4>Ports</h4>
+<div class="table-responsive"><table class="table table-bordered">
+<thead><tr>
+<th>Port</th>
+<th>Protocol</th>
+<th>State<br>Reason</th>
+<th>Service</th>
+<th>Product</th>
+<th>Version</th>
+<th>Extra Info</th>
+</tr></thead>
+<tbody>
+<tr class="success">
+<td title="Port">80</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">http</td>
+<td title="Product">Microsoft Azure Application Gateway</td>
+<td title="Version">v2</td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a><h5>http-server-header</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Microsoft-Azure-Application-Gateway/v2</pre>
+<h5>http-dombased-xss</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Couldn't find any DOM based XSS.</pre>
+<h5>http-headers</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  Server: Microsoft-Azure-Application-Gateway/v2
+  Date: Thu, 31 Jul 2025 09:37:40 GMT
+  Content-Type: text/html
+  Content-Length: 195
+  Connection: close
+  Location: https://wap-uat.embuild.be/
+  
+  (Request type: GET)
+</pre>
+<h5>http-csrf</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Couldn't find any CSRF vulnerabilities.</pre>
+<h5>http-title</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Did not follow redirect to https://wap-uat.embuild.be/</pre>
+<h5>http-stored-xss</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Couldn't find any stored XSS vulnerabilities.</pre>
+</td></tr>
+<tr class="success">
+<td title="Port">443</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">http</td>
+<td title="Product">Microsoft Azure Application Gateway</td>
+<td title="Version">v2</td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a><h5>ssl-enum-ciphers</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  TLSv1.0: 
+    ciphers: 
+      TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp256r1) - A
+      TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (secp256r1) - A
+      TLS_DHE_RSA_WITH_AES_256_CBC_SHA (dh 2048) - A
+      TLS_DHE_RSA_WITH_AES_128_CBC_SHA (dh 2048) - A
+      TLS_RSA_WITH_AES_256_CBC_SHA (rsa 2048) - A
+      TLS_RSA_WITH_AES_128_CBC_SHA (rsa 2048) - A
+      TLS_RSA_WITH_3DES_EDE_CBC_SHA (rsa 2048) - C
+    compressors: 
+      NULL
+    cipher preference: server
+    warnings: 
+      64-bit block cipher 3DES vulnerable to SWEET32 attack
+  TLSv1.1: 
+    ciphers: 
+      TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp256r1) - A
+      TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (secp256r1) - A
+      TLS_DHE_RSA_WITH_AES_256_CBC_SHA (dh 2048) - A
+      TLS_DHE_RSA_WITH_AES_128_CBC_SHA (dh 2048) - A
+      TLS_RSA_WITH_AES_256_CBC_SHA (rsa 2048) - A
+      TLS_RSA_WITH_AES_128_CBC_SHA (rsa 2048) - A
+      TLS_RSA_WITH_3DES_EDE_CBC_SHA (rsa 2048) - C
+    compressors: 
+      NULL
+    cipher preference: server
+    warnings: 
+      64-bit block cipher 3DES vulnerable to SWEET32 attack
+  TLSv1.2: 
+    ciphers: 
+      TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (secp256r1) - A
+      TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (secp256r1) - A
+      TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 (secp256r1) - A
+      TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 (secp256r1) - A
+      TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp256r1) - A
+      TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (secp256r1) - A
+      TLS_DHE_RSA_WITH_AES_256_GCM_SHA384 (dh 2048) - A
+      TLS_DHE_RSA_WITH_AES_128_GCM_SHA256 (dh 2048) - A
+      TLS_DHE_RSA_WITH_AES_256_CBC_SHA (dh 2048) - A
+      TLS_DHE_RSA_WITH_AES_128_CBC_SHA (dh 2048) - A
+      TLS_RSA_WITH_AES_256_GCM_SHA384 (rsa 2048) - A
+      TLS_RSA_WITH_AES_128_GCM_SHA256 (rsa 2048) - A
+      TLS_RSA_WITH_AES_256_CBC_SHA256 (rsa 2048) - A
+      TLS_RSA_WITH_AES_128_CBC_SHA256 (rsa 2048) - A
+      TLS_RSA_WITH_AES_256_CBC_SHA (rsa 2048) - A
+      TLS_RSA_WITH_AES_128_CBC_SHA (rsa 2048) - A
+      TLS_RSA_WITH_3DES_EDE_CBC_SHA (rsa 2048) - C
+    compressors: 
+      NULL
+    cipher preference: server
+    warnings: 
+      64-bit block cipher 3DES vulnerable to SWEET32 attack
+  least strength: C</pre>
+<h5>ssl-cert</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Subject: commonName=*.embuild.be
+Subject Alternative Name: DNS:*.embuild.be, DNS:embuild.be
+Issuer: commonName=Sectigo RSA Domain Validation Secure Server CA/organizationName=Sectigo Limited/stateOrProvinceName=Greater Manchester/countryName=GB
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-09-05T00:00:00
+Not valid after:  2025-10-06T23:59:59
+MD5:     adc0 9f0f c68c ee86 2609 59cb 62e5 8b59
+SHA-1:   3d8e 5dee 7217 6983 6d8a 121d c8f5 7765 ad30 f625
+SHA-256: fba6 321a ee64 703d c098 6241 14ba 2fe1 70ff f87d 4ae4 2025 52bd 8449 c3dc 7c6e</pre>
+<h5>http-csrf</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Couldn't find any CSRF vulnerabilities.</pre>
+<h5>http-server-header</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  Kestrel
+  Microsoft-Azure-Application-Gateway/v2</pre>
+<h5>http-stored-xss</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Couldn't find any stored XSS vulnerabilities.</pre>
+<h5>http-headers</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  Date: Thu, 31 Jul 2025 09:37:41 GMT
+  Content-Type: text/html
+  Content-Length: 13553
+  Connection: close
+  Server: Kestrel
+  Accept-Ranges: bytes
+  ETag: "1dbec31cb8b3171"
+  Last-Modified: Thu, 03 Jul 2025 15:47:35 GMT
+  
+  (Request type: HEAD)
+</pre>
+<h5>http-majordomo2-dir-traversal</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">ERROR: Script execution failed (use -d to debug)</pre>
+<h5>http-vuln-cve2010-0738</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  /jmx-console/: Authentication was not required
+</pre>
+<h5>http-fileupload-exploiter</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  
+    Couldn't find a file-type field.
+  
+    Couldn't find a file-type field.</pre>
+<h5>ssl-date</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">TLS randomness does not represent time</pre>
+<h5>http-title</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">400 The plain HTTP request was sent to HTTPS port</pre>
+<h5>http-dombased-xss</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Couldn't find any DOM based XSS.</pre>
+</td></tr>
+<tr class="warning">
+<td>8080</td>
+<td>tcp</td>
+<td>filtered<br>no-response</td>
+<td>http-proxy</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="warning">
+<td>8443</td>
+<td>tcp</td>
+<td>filtered<br>no-response</td>
+<td>https-alt</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<h2 id="openservices" class="target">Open Services</h2>
+<div class="table-responsive"><table id="table-services" class="table table-striped dataTable" role="grid">
+<thead><tr>
+<th>Address</th>
+<th>Port</th>
+<th>Protocol</th>
+<th>Service</th>
+<th>Product</th>
+<th>Version</th>
+<th>CPE</th>
+<th>Extra info</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#onlinehosts-20-4-111-191">20.4.111.191 - wap-uat.embuild.be</a></td>
+<td>80</td>
+<td>tcp</td>
+<td>http</td>
+<td>Microsoft Azure Application Gateway</td>
+<td>v2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#onlinehosts-20-4-111-191">20.4.111.191 - wap-uat.embuild.be</a></td>
+<td>443</td>
+<td>tcp</td>
+<td>http</td>
+<td>Microsoft Azure Application Gateway</td>
+<td>v2</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<script>
+            $(document).ready(function() {
+              $('#table-services').DataTable();
+              $("a[href^='#onlinehosts-']").click(function(event){     
+                  event.preventDefault();
+                  $('html,body').animate({scrollTop:($(this.hash).offset().top-60)}, 500);
+              });
+            });
+            $('#table-services').DataTable( {
+              "lengthMenu": [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "All"] ]
+            });
+            
+          </script>
+</div>
+<footer class="footer"><div class="container"><p class="text-muted">
+              This report was generated with <a href="https://github.com/honze-net/nmap-bootstrap-xsl">Nmap Bootstrap XSL</a>.<br>
+              Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons BY-SA</a>.<br>
+              Designed and built by Andreas Hontzia (<a href="https://www.twitter.com/honze_net">@honze_net</a>).<br></p></div></footer>
+</body>
+</html>

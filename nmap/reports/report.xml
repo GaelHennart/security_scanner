@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.97 scan initiated Thu Aug 14 12:54:34 2025 as: nmap -sV -sC -A -&#45;script vulners,vuln,ssl*,http-enum,http-title,http-headers -p 80,443,8080,8443 -oX /nmap/reports/report.xml wap-uat.embuild.be -->
+<nmaprun scanner="nmap" args="nmap -sV -sC -A -&#45;script vulners,vuln,ssl*,http-enum,http-title,http-headers -p 80,443,8080,8443 -oX /nmap/reports/report.xml wap-uat.embuild.be" start="1755176074" startstr="Thu Aug 14 12:54:34 2025" version="7.97" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="4" services="80,443,8080,8443"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="20.4.111.191" addrtype="ipv4"/>
+<hostnames>
+<hostname name="wap-uat.embuild.be" type="user"/>
+</hostnames>
+</hosthint>
+<host starttime="1755176085" endtime="1755176374"><status state="up" reason="reset" reason_ttl="63"/>
+<address addr="20.4.111.191" addrtype="ipv4"/>
+<hostnames>
+<hostname name="wap-uat.embuild.be" type="user"/>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="http" product="Microsoft Azure Application Gateway" version="v2" method="probed" conf="10"/><script id="http-dombased-xss" output="Couldn&apos;t find any DOM based XSS."/><script id="http-stored-xss" output="Couldn&apos;t find any stored XSS vulnerabilities."/><script id="http-csrf" output="Couldn&apos;t find any CSRF vulnerabilities."/><script id="http-title" output="Did not follow redirect to https://wap-uat.embuild.be/"><elem key="redirect_url">https://wap-uat.embuild.be/</elem>
+</script><script id="http-server-header" output="Microsoft-Azure-Application-Gateway/v2"><elem>Microsoft-Azure-Application-Gateway/v2</elem>
+</script><script id="http-headers" output="&#xa;  Server: Microsoft-Azure-Application-Gateway/v2&#xa;  Date: Thu, 14 Aug 2025 12:55:05 GMT&#xa;  Content-Type: text/html&#xa;  Content-Length: 183&#xa;  Connection: close&#xa;  &#xa;  (Request type: GET)&#xa;"/></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="http" product="Microsoft Azure Application Gateway" version="v2" tunnel="ssl" method="probed" conf="10"/><script id="http-headers" output="&#xa;  Date: Thu, 14 Aug 2025 12:55:09 GMT&#xa;  Content-Type: text/html&#xa;  Content-Length: 13553&#xa;  Connection: close&#xa;  Server: Kestrel&#xa;  Accept-Ranges: bytes&#xa;  ETag: &quot;1dbec31cb8b3171&quot;&#xa;  Last-Modified: Thu, 03 Jul 2025 15:47:35 GMT&#xa;  &#xa;  (Request type: HEAD)&#xa;"/><script id="http-csrf" output="Couldn&apos;t find any CSRF vulnerabilities."/><script id="http-server-header" output="&#xa;  Kestrel&#xa;  Microsoft-Azure-Application-Gateway/v2"><elem>Kestrel</elem>
+<elem>Microsoft-Azure-Application-Gateway/v2</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="http-title" output="Embuild - National"><elem key="title">Embuild - National</elem>
+</script><script id="http-vuln-cve2010-0738" output="&#xa;  /jmx-console/: Authentication was not required&#xa;"/><script id="http-vuln-cve2017-1001000" output="ERROR: Script execution failed (use -d to debug)"/><script id="ssl-cert" output="Subject: commonName=*.embuild.be&#xa;Subject Alternative Name: DNS:*.embuild.be, DNS:embuild.be&#xa;Issuer: commonName=Sectigo RSA Domain Validation Secure Server CA/organizationName=Sectigo Limited/stateOrProvinceName=Greater Manchester/countryName=GB&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2024-09-05T00:00:00&#xa;Not valid after:  2025-10-06T23:59:59&#xa;MD5:     adc0 9f0f c68c ee86 2609 59cb 62e5 8b59&#xa;SHA-1:   3d8e 5dee 7217 6983 6d8a 121d c8f5 7765 ad30 f625&#xa;SHA-256: fba6 321a ee64 703d c098 6241 14ba 2fe1 70ff f87d 4ae4 2025 52bd 8449 c3dc 7c6e"><table key="subject">
+<elem key="commonName">*.embuild.be</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">Sectigo RSA Domain Validation Secure Server CA</elem>
+<elem key="countryName">GB</elem>
+<elem key="localityName">Salford</elem>
+<elem key="organizationName">Sectigo Limited</elem>
+<elem key="stateOrProvinceName">Greater Manchester</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">AAA9DD4B174E663F36C877ACED94455016AB42D306C4D41F733279FF904B750AE76B02DD0D03FE50F9583733F27FC4F8ADE6CA729FE071B38442F52D124BC147E2BAAD4B1D2AE19B2CF919C7BDF901E49EA335FD69415E0DE70EA29EFC8D5A90369D76ADD6CC47635308CE2805F30F3BC6FD94FC770280BD5482B84CDA092000A1A40E5352143DE3B56309AC0D13E0B757AA62C6F5239B83B36CD35E8170493B2693AFEE06C8D6FAD435B7BD3C5901A2748D20ADABC030D0A7E684FDAFD9948D61C706F6794A2E3C08906C35802A85E3810E09D8061E3F3B5955178FC9A13234281B2BA63C2D1DC09F4C98C602C88A2385CDF1002C2BF938553D41ADFC954305</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">8D:8C:5E:C4:54:AD:8A:E1:77:E9:9B:F9:9B:05:E1:B8:01:8D:61:E1</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">19:07:9E:61:0E:AA:C2:15:B2:EA:AD:4B:18:1A:FF:05:68:54:A0:D2</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Certificate Policies</elem>
+<elem key="value">Policy: 1.3.6.1.4.1.6449.1.2.2.7&#xa;  CPS: https://sectigo.com/CPS&#xa;Policy: 2.23.140.1.2.1</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:http://crt.sectigo.com/SectigoRSADomainValidationSecureServerCA.crt&#xa;OCSP - URI:http://ocsp.sectigo.com</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:*.embuild.be, DNS:embuild.be</elem>
+</table>
+<table>
+<elem key="name">CT Precertificate SCTs</elem>
+<elem key="value">Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : DD:DC:CA:34:95:D7:E1:16:05:E7:95:32:FA:C7:9F:F8:&#xa;                3D:1C:50:DF:DB:00:3A:14:12:76:0A:2C:AC:BB:C8:2A&#xa;    Timestamp : Sep  5 19:44:54.085 2024 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:21:00:E2:A0:C7:D1:06:DF:4B:2E:B6:94:20:&#xa;                5A:0E:39:79:1F:AD:18:93:F4:AF:7C:2C:45:94:3F:9F:&#xa;                E3:FF:08:A7:A0:02:20:24:08:A7:AF:85:C9:0A:B3:F5:&#xa;                DF:AC:F8:EC:58:72:EB:D2:06:C8:CB:20:D8:96:6F:1D:&#xa;                D0:36:00:69:C2:F9:89&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 0D:E1:F2:30:2B:D3:0D:C1:40:62:12:09:EA:55:2E:FC:&#xa;                47:74:7C:B1:D7:E9:30:EF:0E:42:1E:B4:7E:4E:AA:34&#xa;    Timestamp : Sep  5 19:44:54.071 2024 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:21:00:AB:CE:B4:B3:38:72:55:29:62:7C:1B:&#xa;                DB:E6:30:C8:B4:DC:98:5A:42:E3:21:7F:E4:2E:3A:A7:&#xa;                CA:07:FD:26:10:02:20:61:91:F5:95:F4:F4:A1:88:38:&#xa;                73:AC:EE:D6:7D:2B:AB:C3:0B:12:A4:F4:AA:03:5A:3B:&#xa;                42:D9:84:7B:AC:CD:8A&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 12:F1:4E:34:BD:53:72:4C:84:06:19:C3:8F:3F:7A:13:&#xa;                F8:E7:B5:62:87:88:9C:6D:30:05:84:EB:E5:86:26:3A&#xa;    Timestamp : Sep  5 19:44:54.050 2024 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:44:02:20:0C:2D:7B:63:BC:8C:01:18:BB:A4:CD:B2:&#xa;                33:85:80:03:F3:12:11:62:F2:F9:BC:8C:28:FA:22:1E:&#xa;                41:17:65:8C:02:20:5B:34:73:99:01:AA:07:3C:9B:AE:&#xa;                C6:27:51:AC:9B:44:72:C1:B9:E4:5E:16:ED:42:93:8B:&#xa;                A3:F2:F3:86:27:A4</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2024-09-05T00:00:00</elem>
+<elem key="notAfter">2025-10-06T23:59:59</elem>
+</table>
+<elem key="md5">adc09f0fc68cee86260959cb62e58b59</elem>
+<elem key="sha1">3d8e5dee721769836d8a121dc8f57765ad30f625</elem>
+<elem key="sha256">fba6321aee64703dc098624114ba2fe170fff87d4ae4202552bd8449c3dc7c6e</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIGLTCCBRWgAwIBAgIRAMzqsyIYDex+a/CB8/HWyOEwDQYJKoZIhvcNAQELBQAw&#xa;gY8xCzAJBgNVBAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAO&#xa;BgNVBAcTB1NhbGZvcmQxGDAWBgNVBAoTD1NlY3RpZ28gTGltaXRlZDE3MDUGA1UE&#xa;AxMuU2VjdGlnbyBSU0EgRG9tYWluIFZhbGlkYXRpb24gU2VjdXJlIFNlcnZlciBD&#xa;QTAeFw0yNDA5MDUwMDAwMDBaFw0yNTEwMDYyMzU5NTlaMBcxFTATBgNVBAMMDCou&#xa;ZW1idWlsZC5iZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKqp3UsX&#xa;TmY/Nsh3rO2URVAWq0LTBsTUH3Myef+QS3UK52sC3Q0D/lD5WDcz8n/E+K3mynKf&#xa;4HGzhEL1LRJLwUfiuq1LHSrhmyz5Gce9+QHknqM1/WlBXg3nDqKe/I1akDaddq3W&#xa;zEdjUwjOKAXzDzvG/ZT8dwKAvVSCuEzaCSAAoaQOU1IUPeO1YwmsDRPgt1eqYsb1&#xa;I5uDs2zTXoFwSTsmk6/uBsjW+tQ1t708WQGidI0gravAMNCn5oT9r9mUjWHHBvZ5&#xa;Si48CJBsNYAqheOBDgnYBh4/O1lVF4/JoTI0KBsrpjwtHcCfTJjGAsiKI4XN8QAs&#xa;K/k4VT1BrfyVQwUCAwEAAaOCAvkwggL1MB8GA1UdIwQYMBaAFI2MXsRUrYrhd+mb&#xa;+ZsF4bgBjWHhMB0GA1UdDgQWBBQZB55hDqrCFbLqrUsYGv8FaFSg0jAOBgNVHQ8B&#xa;Af8EBAMCBaAwDAYDVR0TAQH/BAIwADAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYB&#xa;BQUHAwIwSQYDVR0gBEIwQDA0BgsrBgEEAbIxAQICBzAlMCMGCCsGAQUFBwIBFhdo&#xa;dHRwczovL3NlY3RpZ28uY29tL0NQUzAIBgZngQwBAgEwgYQGCCsGAQUFBwEBBHgw&#xa;djBPBggrBgEFBQcwAoZDaHR0cDovL2NydC5zZWN0aWdvLmNvbS9TZWN0aWdvUlNB&#xa;RG9tYWluVmFsaWRhdGlvblNlY3VyZVNlcnZlckNBLmNydDAjBggrBgEFBQcwAYYX&#xa;aHR0cDovL29jc3Auc2VjdGlnby5jb20wIwYDVR0RBBwwGoIMKi5lbWJ1aWxkLmJl&#xa;ggplbWJ1aWxkLmJlMIIBfQYKKwYBBAHWeQIEAgSCAW0EggFpAWcAdgDd3Mo0ldfh&#xa;FgXnlTL6x5/4PRxQ39sAOhQSdgosrLvIKgAAAZHDt+NFAAAEAwBHMEUCIQDioMfR&#xa;Bt9LLraUIFoOOXkfrRiT9K98LEWUP5/j/winoAIgJAinr4XJCrP136z47Fhy69IG&#xa;yMsg2JZvHdA2AGnC+YkAdgAN4fIwK9MNwUBiEgnqVS78R3R8sdfpMO8OQh60fk6q&#xa;NAAAAZHDt+M3AAAEAwBHMEUCIQCrzrSzOHJVKWJ8G9vmMMi03JhaQuMhf+QuOqfK&#xa;B/0mEAIgYZH1lfT0oYg4c6zu1n0rq8MLEqT0qgNaO0LZhHuszYoAdQAS8U40vVNy&#xa;TIQGGcOPP3oT+Oe1YoeInG0wBYTr5YYmOgAAAZHDt+MiAAAEAwBGMEQCIAwte2O8&#xa;jAEYu6TNsjOFgAPzEhFi8vm8jCj6Ih5BF2WMAiBbNHOZAaoHPJuuxidRrJtEcsG5&#xa;5F4W7UKTi6Py84YnpDANBgkqhkiG9w0BAQsFAAOCAQEAc0uUtAPuN7K6r0+dyeXD&#xa;kvzfNU+nfH/m0OSPjwN5dAmy9XGXmsifHbyzYeM/ZRRXTawZw6gRLzoi+QJ8B24l&#xa;ae2tuq9By5u5NArw71/P0Sffp5SqZhJ5gG1rAp+NfOFy7RfO6HqVTeUEXXf6INtg&#xa;88B6HgltgEc/59HMXOPbiBZQr2Yoc8+P1oaLcZXOMcUePNaNpAKlYmVNACtz0Bnt&#xa;WuMWFdTdzbBBn6BHF2x0PP7uKYFGvx79SlKTo/ouV1PlwfjolSB1tGn5qEBlrZLv&#xa;6eNFI0Xl899HAP9R27xY2ys9wJrEVqKyrmgMcoxynV/G8wtDKXU2vMXDXlh2YkeK&#xa;BQ==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-enum-ciphers" output="&#xa;  TLSv1.0: &#xa;    ciphers: &#xa;      TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp256r1) - A&#xa;      TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (secp256r1) - A&#xa;      TLS_DHE_RSA_WITH_AES_256_CBC_SHA (dh 2048) - A&#xa;      TLS_DHE_RSA_WITH_AES_128_CBC_SHA (dh 2048) - A&#xa;      TLS_RSA_WITH_AES_256_CBC_SHA (rsa 2048) - A&#xa;      TLS_RSA_WITH_AES_128_CBC_SHA (rsa 2048) - A&#xa;      TLS_RSA_WITH_3DES_EDE_CBC_SHA (rsa 2048) - C&#xa;    compressors: &#xa;      NULL&#xa;    cipher preference: server&#xa;    warnings: &#xa;      64-bit block cipher 3DES vulnerable to SWEET32 attack&#xa;  TLSv1.1: &#xa;    ciphers: &#xa;      TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp256r1) - A&#xa;      TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (secp256r1) - A&#xa;      TLS_DHE_RSA_WITH_AES_256_CBC_SHA (dh 2048) - A&#xa;      TLS_DHE_RSA_WITH_AES_128_CBC_SHA (dh 2048) - A&#xa;      TLS_RSA_WITH_AES_256_CBC_SHA (rsa 2048) - A&#xa;      TLS_RSA_WITH_AES_128_CBC_SHA (rsa 2048) - A&#xa;      TLS_RSA_WITH_3DES_EDE_CBC_SHA (rsa 2048) - C&#xa;    compressors: &#xa;      NULL&#xa;    cipher preference: server&#xa;    warnings: &#xa;      64-bit block cipher 3DES vulnerable to SWEET32 attack&#xa;  TLSv1.2: &#xa;    ciphers: &#xa;      TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (secp256r1) - A&#xa;      TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (secp256r1) - A&#xa;      TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 (secp256r1) - A&#xa;      TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 (secp256r1) - A&#xa;      TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp256r1) - A&#xa;      TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (secp256r1) - A&#xa;      TLS_DHE_RSA_WITH_AES_256_GCM_SHA384 (dh 2048) - A&#xa;      TLS_DHE_RSA_WITH_AES_128_GCM_SHA256 (dh 2048) - A&#xa;      TLS_DHE_RSA_WITH_AES_256_CBC_SHA (dh 2048) - A&#xa;      TLS_DHE_RSA_WITH_AES_128_CBC_SHA (dh 2048) - A&#xa;      TLS_RSA_WITH_AES_256_GCM_SHA384 (rsa 2048) - A&#xa;      TLS_RSA_WITH_AES_128_GCM_SHA256 (rsa 2048) - A&#xa;      TLS_RSA_WITH_AES_256_CBC_SHA256 (rsa 2048) - A&#xa;      TLS_RSA_WITH_AES_128_CBC_SHA256 (rsa 2048) - A&#xa;      TLS_RSA_WITH_AES_256_CBC_SHA (rsa 2048) - A&#xa;      TLS_RSA_WITH_AES_128_CBC_SHA (rsa 2048) - A&#xa;      TLS_RSA_WITH_3DES_EDE_CBC_SHA (rsa 2048) - C&#xa;    compressors: &#xa;      NULL&#xa;    cipher preference: server&#xa;    warnings: &#xa;      64-bit block cipher 3DES vulnerable to SWEET32 attack&#xa;  least strength: C"><table key="TLSv1.0">
+<table key="ciphers">
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA</elem>
+<elem key="kex_info">secp256r1</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA</elem>
+<elem key="kex_info">secp256r1</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_DHE_RSA_WITH_AES_256_CBC_SHA</elem>
+<elem key="kex_info">dh 2048</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_DHE_RSA_WITH_AES_128_CBC_SHA</elem>
+<elem key="kex_info">dh 2048</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_RSA_WITH_AES_256_CBC_SHA</elem>
+<elem key="kex_info">rsa 2048</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_RSA_WITH_AES_128_CBC_SHA</elem>
+<elem key="kex_info">rsa 2048</elem>
+</table>
+<table>
+<elem key="strength">C</elem>
+<elem key="name">TLS_RSA_WITH_3DES_EDE_CBC_SHA</elem>
+<elem key="kex_info">rsa 2048</elem>
+</table>
+</table>
+<table key="compressors">
+<elem>NULL</elem>
+</table>
+<elem key="cipher preference">server</elem>
+<table key="warnings">
+<elem>64-bit block cipher 3DES vulnerable to SWEET32 attack</elem>
+</table>
+</table>
+<table key="TLSv1.1">
+<table key="ciphers">
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA</elem>
+<elem key="kex_info">secp256r1</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA</elem>
+<elem key="kex_info">secp256r1</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_DHE_RSA_WITH_AES_256_CBC_SHA</elem>
+<elem key="kex_info">dh 2048</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_DHE_RSA_WITH_AES_128_CBC_SHA</elem>
+<elem key="kex_info">dh 2048</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_RSA_WITH_AES_256_CBC_SHA</elem>
+<elem key="kex_info">rsa 2048</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_RSA_WITH_AES_128_CBC_SHA</elem>
+<elem key="kex_info">rsa 2048</elem>
+</table>
+<table>
+<elem key="strength">C</elem>
+<elem key="name">TLS_RSA_WITH_3DES_EDE_CBC_SHA</elem>
+<elem key="kex_info">rsa 2048</elem>
+</table>
+</table>
+<table key="compressors">
+<elem>NULL</elem>
+</table>
+<elem key="cipher preference">server</elem>
+<table key="warnings">
+<elem>64-bit block cipher 3DES vulnerable to SWEET32 attack</elem>
+</table>
+</table>
+<table key="TLSv1.2">
+<table key="ciphers">
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</elem>
+<elem key="kex_info">secp256r1</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</elem>
+<elem key="kex_info">secp256r1</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384</elem>
+<elem key="kex_info">secp256r1</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256</elem>
+<elem key="kex_info">secp256r1</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA</elem>
+<elem key="kex_info">secp256r1</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA</elem>
+<elem key="kex_info">secp256r1</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_DHE_RSA_WITH_AES_256_GCM_SHA384</elem>
+<elem key="kex_info">dh 2048</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_DHE_RSA_WITH_AES_128_GCM_SHA256</elem>
+<elem key="kex_info">dh 2048</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_DHE_RSA_WITH_AES_256_CBC_SHA</elem>
+<elem key="kex_info">dh 2048</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_DHE_RSA_WITH_AES_128_CBC_SHA</elem>
+<elem key="kex_info">dh 2048</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_RSA_WITH_AES_256_GCM_SHA384</elem>
+<elem key="kex_info">rsa 2048</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_RSA_WITH_AES_128_GCM_SHA256</elem>
+<elem key="kex_info">rsa 2048</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_RSA_WITH_AES_256_CBC_SHA256</elem>
+<elem key="kex_info">rsa 2048</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_RSA_WITH_AES_128_CBC_SHA256</elem>
+<elem key="kex_info">rsa 2048</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_RSA_WITH_AES_256_CBC_SHA</elem>
+<elem key="kex_info">rsa 2048</elem>
+</table>
+<table>
+<elem key="strength">A</elem>
+<elem key="name">TLS_RSA_WITH_AES_128_CBC_SHA</elem>
+<elem key="kex_info">rsa 2048</elem>
+</table>
+<table>
+<elem key="strength">C</elem>
+<elem key="name">TLS_RSA_WITH_3DES_EDE_CBC_SHA</elem>
+<elem key="kex_info">rsa 2048</elem>
+</table>
+</table>
+<table key="compressors">
+<elem>NULL</elem>
+</table>
+<elem key="cipher preference">server</elem>
+<table key="warnings">
+<elem>64-bit block cipher 3DES vulnerable to SWEET32 attack</elem>
+</table>
+</table>
+<elem key="least strength">C</elem>
+</script><script id="http-dombased-xss" output="Couldn&apos;t find any DOM based XSS."/><script id="http-stored-xss" output="Couldn&apos;t find any stored XSS vulnerabilities."/><script id="http-trane-info" output="Problem with XML parsing of /evox/about"/></port>
+<port protocol="tcp" portid="8080"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="http-proxy" method="table" conf="3"/></port>
+<port protocol="tcp" portid="8443"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="https-alt" method="table" conf="3"/></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="80"/>
+</os>
+<uptime seconds="2211577" lastboot="Sat Jul 19 22:39:57 2025"/>
+<distance value="2"/>
+<tcpsequence index="262" difficulty="Good luck!" values="12DE2979,A30D589A,74F7BB39,8DCD2C84,22A75FB3,F57D1C2"/>
+<ipidsequence class="Randomized" values="2C5D,116E,6328,AF78,E52A,64B6"/>
+<tcptssequence class="1000HZ" values="83CDD55A,83CDD5C2,83CDD620,83CDD684,83CDD6ED,83CDD746"/>
+<trace port="80" proto="tcp">
+<hop ttl="1" ipaddr="172.18.0.1" rtt="0.18"/>
+<hop ttl="2" ipaddr="20.4.111.191" rtt="1.43"/>
+</trace>
+<times srtt="5617" rttvar="7123" to="100000"/>
+</host>
+<runstats><finished time="1755176374" timestr="Thu Aug 14 12:59:34 2025" summary="Nmap done at Thu Aug 14 12:59:34 2025; 1 IP address (1 host up) scanned in 300.05 seconds" elapsed="300.05" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

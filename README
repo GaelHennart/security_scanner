@@ -29,6 +29,7 @@ Installer les dépendances Python :
 - pip install -r requirements.txt
 
 Installer les dépendances Angular :
+**S'assurer que le package.json est le bon avant d'installer les dépendances**
 - Dans le projet faire : cd snyk/angular
 - npm install --legacy-peer-deps
 
